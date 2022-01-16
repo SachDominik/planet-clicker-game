@@ -1,0 +1,231 @@
+body {
+    background: url(assets/space-bg.jpg);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Fredoka One', cursive;
+    overflow: hidden;
+}
+#play-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#planet {
+    width: 300px;
+    height: 300px;
+    background-color: gray;
+    border-radius: 50%;
+    box-shadow: 0px 0px 80px rgba(255, 255, 255, 0.425), inset 0px 0px 80px rgba(0, 0, 0, 0.233);
+    transition: 0.1s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotating 3s infinite;
+}
+
+#planet:active {
+    width: 310px;
+    height: 310px;
+}
+
+#space-material {
+    font-size: 25px;
+    color: white;
+}
+
+#upgrades {
+    background-color: white;
+    padding: 5px 10px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#upgrades:hover {
+    transform: scale(1.1);
+}
+
+#top-bar {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+* {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
+
+  #face {
+      width: 50%;
+      height: 50%;
+      animation: hovering 3s infinite;
+  }
+
+@keyframes hovering {
+    0% {transform: translateY(10px);}
+    50% {transform: translateY(-10px);}
+    100% {transform: translateY(10px);}
+  }
+
+@keyframes rotating {
+    0% {transform: translateY(5px);
+        box-shadow: 0px 0px 80px rgba(255, 255, 255, 0.425),
+        inset 0px 30px 50px rgba(0, 0, 0, 0.25),
+        inset 0px 0px 60px rgba(0, 0, 0, 0.4);
+    }
+    50% {transform: translateY(-5px);
+        box-shadow: 0px 0px 80px rgba(255, 255, 255, 0.425),
+        inset 0px -30px 50px rgba(0, 0, 0, 0.25),
+        inset 0px 0px 60px rgba(0, 0, 0, 0.4);
+    }
+    100% {transform: translateY(5px);
+        box-shadow: 0px 0px 80px rgba(255, 255, 255, 0.425),
+        inset 0px 30px 50px rgba(0, 0, 0, 0.25),
+        inset 0px 0px 60px rgba(0, 0, 0, 0.4);
+    
+    }
+  }
+
+  @keyframes meteorite-rotating {
+    0% {transform: rotate(0deg)}
+    100% {transform: rotate(359deg)}
+  }
+
+  #upgrades-popup {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.9);
+      width: 80%;
+      height: 80%;
+      border-radius: 8px;
+      transition: 1s;
+  }
+
+  #close-upgrades {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+  }
+
+  .meteorite {
+      position: absolute;
+      right: auto;
+      bottom: auto;
+      background-color: gray;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      box-shadow: 0px 0px 70px rgb(148, 163, 65), inset 0px 10px 10px rgb(71, 71, 71);
+      transition: 5s;
+      transition-timing-function: ease-in;
+      z-index: -1;
+  }
+
+  @media(max-width:700px) {
+    #planet {
+        width: 200px;
+        height: 200px;
+    }
+    #planet:active {
+        width: 210px;
+        height: 210px;
+    }
+    .meteorite {
+        width: 20px;
+        height: 20px;
+    }
+    #top-bar {
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+    }
+    #play-area {
+        width: 100%;
+    }
+    #space-material {
+        font-size: 20px;
+        margin-left: 20px
+    }
+  }
+
+  .plus-point {
+      color: white;
+      font-size: 20px;
+      opacity: 1;
+      position: absolute;
+      transform: translate(0px,0px);
+      transition: 1s;
+  }
+
+  .plus-point-hide {
+    color: white;
+    font-size: 20px;
+    opacity: 0 !important;
+    position: absolute;
+    transform: translate(0px,-100px) !important;
+    transition: 1s;
+}
+
+#upgrades-popup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+#upgrades-popup > div {
+    height: 70%;
+}
+
+#more-meteorites {
+    background:rgb(4, 3, 20);
+    border-radius: 8px;
+    padding: 8px 15px;
+    color: white;
+}
+
+h3 {
+    text-align: center;
+}

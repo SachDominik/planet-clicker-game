@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet clicker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="play-area">
+        <div id="top-bar">
+            <div id="space-material">Space material: 0</div>
+            <div id="upgrades" onclick="openUpgrades()">Upgrades</div>
+        </div>
+        <div id="main">
+            <div id="center">
+                <div id="planet">
+                    <img id="face" src="assets/face.png" alt="face">
+                </div>
+            </div>
+        </div>
+        <div id="bottom-bar"></div>
+    </div>
+    <div id="upgrades-popup">
+        <div onclick="closeUpgrades()" id="close-upgrades">X</div>
+        <h2>Upgrades</h2>
+        <div>
+            <h3 id="meteorites-per-minute">Meteorites per minute: 1</h3>
+            <div onclick="addMeteorites()" id="more-meteorites"><span>+1</span> <span>(Cost: 500 space material)</span></div>
+        </div>
+        
+    </div>
+
+    <script src="space-material.js"></script>
+    <script src="upgrades.js"></script>
+    <script src="meteorites.js"></script>
+</body>
+</html>
